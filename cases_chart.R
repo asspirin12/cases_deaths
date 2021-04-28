@@ -21,7 +21,7 @@ cases_plot <-
     title = "Количество новых заражений Covid-19\nв России опустилось ниже 10 тыс."
   ) + 
   theme(
-    panel.grid.major.y = element_line(size = .5, color = "#dddddd"),
+    panel.grid.major.y = element_line(size = .3, color = "#dddddd"),
     panel.grid.major.x = element_line(size = .3, color = "#dddddd")
   ) +
   scale_x_date(labels = c(

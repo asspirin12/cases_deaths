@@ -18,7 +18,7 @@ deaths_plot <-
     title = "Количество смертей от Covid-19\nв России по данным оперштаба"
   ) + 
   theme(
-    panel.grid.major.y = element_line(size = .5, color = "#dddddd"),
+    panel.grid.major.y = element_line(size = .3, color = "#dddddd"),
     panel.grid.major.x = element_line(size = .3, color = "#dddddd")
   ) +
   scale_x_date(labels = c(
