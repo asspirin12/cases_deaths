@@ -1,0 +1,19 @@
+library(tidyverse)
+library(coronavirus)
+library(bbplot2)
+
+cases <- refresh_coronavirus_jhu() %>%
+  filter(grepl("Russ", location)) %>%
+  filter(data_type == "cases_new") %>%
+  filter(date >= as.Date("2020-03-01"))
+
+cases %>%
+  ggplot() +
+  geom_line(aes(x = date, y = value), size = 1, color = "#1380a1") +
+  geom_hline(yintercept = 0, size = 1, color = "#333333") +
+  bbc_style()
+  
+
+deaths %>%
+  ggplot() +
+  geom_line(aes(x = date, y = value))

@@ -1,0 +1,21 @@
+library(tidyverse)
+library(coronavirus)
+library(pracma)
+
+cases <- refresh_coronavirus_jhu() %>%
+  filter(grepl("Russ", location)) %>%
+  filter(data_type == "cases_new") %>%
+  filter(date >= as.Date("2020-03-01"))
+
+deaths <- refresh_coronavirus_jhu() %>%
+  filter(grepl("Russ", location)) %>%
+  filter(data_type == "deaths_new") %>%
+  filter(date >= as.Date("2020-03-01"))
+
+cases %>%
+  ggplot() +
+  geom_line(aes(x = date, y = value))
+
+deaths %>%
+  ggplot() +
+  geom_line(aes(x = date, y = value))
